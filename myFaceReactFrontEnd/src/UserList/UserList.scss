@@ -1,0 +1,32 @@
+.usersList-container {
+	 
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-evenly;
+	padding: 0;
+	row-gap: 15px;
+	column-gap: 15px;
+	justify-content: center;
+	align-items: center;
+	}
+	
+	.individual-user {
+	  text-align: left;
+	  padding: 0;
+	  background-color: black;
+	  color:white;
+	  margin-top:0;
+	}
+	
+	.profile-picture {
+	  width: 400px;
+	  height:100%;
+	}
+  
+	.user-detail {
+	  padding-left:10px;
+	}
+	
+	p .user-detail {
+	  padding-bottom: 10px;
+	}
