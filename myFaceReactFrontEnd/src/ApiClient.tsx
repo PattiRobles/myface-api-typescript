@@ -31,19 +31,21 @@ export function createPost(message: string, imageUrl: string): Promise<Response>
         return fetchResponse; 
 }
 
-export function createUser(message: string, imageUrl: string): Promise<Response> {
-    const url = `http://localhost:3001/posts/create`;
+export function createUser(userNameAndSurname: string, userName: string, userEmail: string, userCoverImage: string, userProfileImage: string): Promise<Response> {
+    const url = `http://localhost:3001/users/create`;
 
     const requestBody = {
-        message: message,
-        imageUrl: imageUrl
+        userNameAndSurname: userName, 
+        userName: userName, 
+        userEmail: userEmail, 
+        userCoverImage: userCoverImage, 
+        userProfileImage: userProfileImage
     }
 
     const fetchResponse = fetch(url, {
         //method is set to "GET" by default when using fetch()
-        method: "POST", headers: {
-            "Content-Type": "application/json"
-        },
+        method: "POST", 
+        headers: {"Content-Type": "application/json"},
         //when we pass a JS object to a server, it needs to be 'stringified' 
         body: JSON.stringify(requestBody)
     })

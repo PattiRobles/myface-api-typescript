@@ -11,9 +11,6 @@ import { UserDetail } from './UserDetail/UserDetail'
 
 function App() {
 
-  const params = useParams();
-  console.log(params)
-
   return (
     <Router>
       <div>
@@ -46,7 +43,7 @@ function App() {
           <CreateUser />
           </div>} />
 
-          <Route path="users/:userId" element={
+          <Route path="/users/:userId" element={
             <div>
               <UserDetail />
             </div>} />

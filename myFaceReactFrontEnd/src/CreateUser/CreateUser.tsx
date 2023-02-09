@@ -11,7 +11,7 @@ export function CreateUser() {
     const [userProfileImage, setUserProfileImage] = useState("");
 
     async function HandleSubmit(event: FormEvent<HTMLFormElement>) {
-        event.preventDefault();
+        event.preventDefault()
         createUser(userNameAndSurname, userName, userEmail, userCoverImage, userProfileImage)
             .then(
             (response) => {

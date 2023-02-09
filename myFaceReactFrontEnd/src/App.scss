@@ -199,11 +199,15 @@ ul {
   padding: 2px 50px;
   margin-bottom: 7px;
   margin-top: 5px;
+  &:hover{
+    background-color: lightblue ;
+    //hover not working?
+  }
 }
 
-.like-dislike-button:hover {
-  background-color: lightblue
-}
+// .like-dislike-button:hover {
+//   background-color: lightblue
+// }
 
 .previous-next-container {
   display: flex;

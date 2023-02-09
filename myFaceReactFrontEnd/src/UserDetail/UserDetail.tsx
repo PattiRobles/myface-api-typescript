@@ -1,3 +1,4 @@
+
 import React from "react";
 import { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
@@ -28,15 +29,15 @@ export function UserDetail() {
     // const location = useLocation();
     // const userTagAndUserId = location.pathname
     //the pathname does not give you access to the parameters
-    
 
     let { userId } = useParams(); 
+    
 
 	//can destructure the object returned by params and call it a name that makes sense
 
 	useEffect(() => {
 		fetch(`http://localhost:3001/users/${userId}`)
-		.then(response => response.json)
+		.then(response => response.json())
 		.then(userData => setUserData(userData))
 	}, []
 	)

@@ -69,7 +69,7 @@ export function PostList() {
                         </div> </li>)}
             </ul>}
 <br/>
-<div className='next-previous-container'>
+<div className='previous-next-container'>
             {pageData?.previous &&  <Link to={pageData.previous}><button className='next-previous-button'>Previous</button></Link>}            
             {<br/>}
             {pageData?.next && <Link to={pageData.next}><button className='next-previous-button'>Next</button></Link>}
