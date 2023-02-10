@@ -25,29 +25,50 @@ export function CreateUser() {
         <div>
             <form onSubmit={(e) => HandleSubmit(e)}>
                 <label>
-                    Name:
-                    <input type="text" name="name" required
-                        onChange={e => setUserNameAndSurname(e.target.value)} ></input>
+                    Name: <br></br>
+                    <input 
+                    type="text" 
+                    name="name" 
+                    required
+                    onChange={e => setUserNameAndSurname(e.target.value)}
+                    placeholder="required" ></input>
                 </label>
                 <label>
-                    Username:
-                    <input type="text" name="username" required
-                        onChange={e => setUserName(e.target.value)}></input>
+                    Username:<br></br>
+                    <input 
+                    type="text" 
+                    name="username" 
+                    required
+                    onChange={e => setUserName(e.target.value)}
+                    placeholder="required " ></input>
                 </label>
                 <label>
-                    Email:
-                    <input type="text" name="email" required
-                        onChange={e => setUserEmail(e.target.value)}></input>
+                    Email: <br></br>
+                    <input 
+                    type="text" 
+                    name="email" 
+                    required
+                    onChange={e => setUserEmail(e.target.value)}
+                    placeholder="required"></input>
                 </label>
                 <label>
-                    Cover Image URL:
-                    <input type="text"  name="coverImageUrl" required
-                        onChange={e => setUserCoverImage(e.target.value)}></input>
+                    Cover Image URL: <br></br>
+                    <input 
+                    type="text"  
+                    name="coverImageUrl" 
+                    required
+                    onChange={e => setUserCoverImage(e.target.value)}
+                    placeholder="required">
+                    </input>
                 </label>
                 <label>
-                    Profile Image URL:
-                    <input type="text" name="profileImageUrl" required
-                        onChange={e => setUserProfileImage(e.target.value)} ></input>
+                    Profile Image URL: <br></br>
+                    <input 
+                    type="text" 
+                    name="profileImageUrl" 
+                    required
+                    onChange={e => setUserProfileImage(e.target.value)} 
+                    placeholder="Required information"></input>
                 </label>
                 
                 <button type="submit">Create New User</button>

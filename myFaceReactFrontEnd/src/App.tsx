@@ -16,40 +16,47 @@ function App() {
       <div>
       <NavBar />
       </div>
-      <h1>MyFace App</h1>
+      
       <Routes>
 
         <Route path="/posts" element={
           <div>
-            <h2>Loaded with Routers!</h2>
+            <h1>Posts</h1>
             <PostList />
           </div>} />
 
         <Route path="/users" element={
           <div>
-          <h2>Users</h2>
+          <h1>Users</h1>
           <UserList />
           </div>} />
 
         <Route path="/posts/create" element={
           <div>
-          <h2>Create Posts </h2>
+          <h2 className='create-title'>Create New Post </h2>
           <CreatePost />
           </div>} />
 
-          <Route path="/users/create" element={
+        <Route path="/users/create" element={
           <div>
-          <h2>Create User</h2>
+          <h2 className='create-title'>Create New User</h2>
           <CreateUser />
           </div>} />
 
-          <Route path="/users/:userId" element={
+        <Route path="/users/:userId" element={
             <div>
-              <UserDetail />
+            <UserDetail />
             </div>} />
 
-        <Route path="*" element={
-          <PostList />} />
+        <Route path='/' element={
+          <div><h1>Welcome to MyFace</h1>
+          <h2>Navigate via Menu</h2></div>
+            
+           } />
+
+        {/* <Route path="*" element={
+          <PostList />} /> */}
+
       </Routes>
     </Router>
   )

@@ -24,12 +24,12 @@ export function CreatePost() {
         <div>
             <form method="post" action="/posts/create" onSubmit={(e) => HandleSubmit(e)}>
                 <label>
-                    Blog Message:
+                    Blog Message: <br></br>
                     <input type="text" name="message" required
                         onChange={e => setPostMessage(e.target.value)} />
                 </label>
                 <label>
-                    Blog image URL:
+                    Blog image URL:<br></br>
                     <input type="text" required name="imageUrl"
                         onChange={e => setPostImageUrl(e.target.value)}></input>
                 </label>
