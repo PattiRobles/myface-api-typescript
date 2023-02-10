@@ -25,12 +25,14 @@ export interface UserModel {
 
 export function UserDetail() {
     const [userData, setUserData] = useState<UserModel>();
+    const [postsCarouselIndex, setPostsCarouselIndex] = useState(1);
 
     // const location = useLocation();
     // const userTagAndUserId = location.pathname
     //the pathname does not give you access to the parameters
 
     let { userId } = useParams(); 
+    const postsCarousel = document.getElementById("posts-carousel")
     
 
 	//can destructure the object returned by params and call it a name that makes sense
@@ -39,9 +41,28 @@ export function UserDetail() {
 		fetch(`http://localhost:3001/users/${userId}`)
 		.then(response => response.json())
 		.then(userData => setUserData(userData))
-	}, []
-	)
+	}, []);
 
+    function userPostsNextButton() {
+        console.log("carousel next button was clicked");
+
+        setPostsCarouselIndex(postsCarouselIndex + 1);
+        if (postsCarouselIndex > (postsCarousel?.children.length - 1)) {
+            setPostsCarouselIndex(1);
+        }
+        postsCarousel.style.transform = `translateX(-${postsCarouselIndex * 18}%)`;
+    };
+
+    function userPostsPreviousButton() {
+        console.log("carousel Previous button was clicked");
+
+        setPostsCarouselIndex(postsCarouselIndex - 1);
+        if (postsCarouselIndex < 0) {
+            setPostsCarouselIndex(postsCarousel?.children.length - 1);
+        }
+        postsCarousel.style.transform = `translateX(-${postsCarouselIndex * 18}%)`;
+    };
+	
     return (
 		<div className="user-detail-top-container">
 			{/* {!userData && <div>UserID not valid</div>} */}
@@ -55,7 +76,19 @@ export function UserDetail() {
 				<p className="user-name-username">{userData.username}</p> 
 				<p className="user-name-email">{userData.email}</p> 
 			</div>	
-		{/* to add own posts, likes and dislikes */}
+		 {/* Posts, likes and dislikes */}
+         <h3 className="title-user-posts">{userData.name}'s Posts</h3>
+         <div className="user-posts-container" id="posts-carousel">
+                    {userData.posts.map((userPost) =>
+
+                        <div className="user-single-post">
+                            <img src={userPost.imageUrl} className="user-post-image-url"></img>
+                            <div className="user-post-message">{userPost.message}</div>
+                        </div>
+                    )}
+                </div>
+                <button id="posts-carousel-previous-button" onClick={() => userPostsPreviousButton()} >See Previous</button>
+                <button id="posts-carousel-next-button" onClick={() => userPostsNextButton()}>See More</button>
         	</div> }
 		</div>
     )

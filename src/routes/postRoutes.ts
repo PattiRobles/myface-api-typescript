@@ -26,7 +26,9 @@ router.post('/create/',
     const post = request.body;
 
     await createPost(post as CreatePostRequest);
-    return response.sendStatus(200);
+    return response.sendStatus(200).json({status:200})
+    //added 'json({status:200}) to be able to access the response object
+    //in the createpost component
 });
 
 router.post('/:postId/like/', async (request, response) => {

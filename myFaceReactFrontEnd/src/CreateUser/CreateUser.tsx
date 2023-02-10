@@ -23,11 +23,11 @@ export function CreateUser() {
 
     return (
         <div>
-            <form method="post" action="/users/create" onSubmit={(e) => HandleSubmit(e)}>
+            <form onSubmit={(e) => HandleSubmit(e)}>
                 <label>
                     Name:
                     <input type="text" name="name" required
-                        onChange={e => setUserNameAndSurname(e.target.value)} />
+                        onChange={e => setUserNameAndSurname(e.target.value)} ></input>
                 </label>
                 <label>
                     Username:
@@ -37,7 +37,7 @@ export function CreateUser() {
                 <label>
                     Email:
                     <input type="text" name="email" required
-                        onChange={e => setUserEmail(e.target.value)} />
+                        onChange={e => setUserEmail(e.target.value)}></input>
                 </label>
                 <label>
                     Cover Image URL:
@@ -47,7 +47,7 @@ export function CreateUser() {
                 <label>
                     Profile Image URL:
                     <input type="text" name="profileImageUrl" required
-                        onChange={e => setUserProfileImage(e.target.value)} />
+                        onChange={e => setUserProfileImage(e.target.value)} ></input>
                 </label>
                 
                 <button type="submit">Create New User</button>

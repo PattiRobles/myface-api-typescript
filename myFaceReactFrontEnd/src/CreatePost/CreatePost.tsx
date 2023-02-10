@@ -13,11 +13,13 @@ export function CreatePost() {
             (response) => {
                 alert("New post successfully created!");
                 console.log(response)
-            }
+            })
+            .catch((error) => {
+                console.error(error.message)
+            })
 
-        );
-    }
-
+        };
+    
     return (
         <div>
             <form method="post" action="/posts/create" onSubmit={(e) => HandleSubmit(e)}>

@@ -2,6 +2,7 @@ import React from "react";
 import { useState, useEffect } from "react";
 import "../App.scss"
 import { Link, useLocation } from "react-router-dom";
+import { likePost } from "../ApiClient";
 
 //Interfaces ( copy them here - no importing from back end, we need to keep segregation between front&back end)
 interface PostUserModel {
@@ -50,6 +51,11 @@ export function PostList() {
 
     }, [location.search]);
 
+    function handleLikeClick(postId: number, likeDislike: string) {
+        console.log("like button was clicked");
+        // event.preventDefault(); Think this is not needed for a button click
+        likePost(postId, likeDislike)
+    }
    
      return (
         <div>
@@ -63,9 +69,10 @@ export function PostList() {
                             <p>{post.message}</p>
 
                             <div className='button-container'>
-                                <button className='like-dislike-button' type="button">👍</button>
-                                <button className='like-dislike-button'type="button">👎</button>
+                                <button className="like-dislike-button" type="submit">👍</button>                
+                                <button className="like-dislike-button" type="submit">👎</button>
                             </div>
+                     
                         </div> </li>)}
             </ul>}
 <br/>

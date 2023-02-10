@@ -205,9 +205,6 @@ ul {
   }
 }
 
-// .like-dislike-button:hover {
-//   background-color: lightblue
-// }
 
 .previous-next-container {
   display: flex;
@@ -223,126 +220,29 @@ ul {
   width: 100px;
 
 }
-// * {
-//   margin: 0;
-//   border: 0;
-//   box-sizing: border-box;
 
-// }
+.user-posts-container {
+  display: flex;
+  margin-top: 5%;
+}
 
-// #root {
-//   max-width: 1280px;
-//   margin: 0 auto;
-//   text-align: center;
-//   border-style: border-box;
-// }
+.user-single-post {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: top;
+  align-items: center;
+  margin: 2%;
+}
 
-// ul {
-//   list-style: none;
-// }
+.title-user-posts{
+  margin-top: 30px;
+  text-align: left;
 
-// .all-posts-container {
-//   display: flex;
-//   flex-wrap: wrap;
-//   justify-content: space-evenly;
-//   padding: 0;
-//   gap:15px;
- 
-// }
+}
 
-// .single-post-text-box {
-//   padding: 0;
-//   background-color: black;
-//   color:white;
-//   border: 0;
-// }
+.user-post-image-url{
+  width: 200px;
+  height: auto;
 
-// .single-post-container {
-//   position: relative;
-//   margin-top: 20px;
-//   background-color: black;
-
-// }
-
-
-// .usersList-container {
-  
-//   display: flex;
-//   flex-wrap: wrap;
-//   justify-content: space-evenly;
-//   padding: 0;
-//   row-gap: 15px;
-//   column-gap: 15px;
-//   justify-content: center;
-//   align-items: center;
-
-// }
-
-// .individual-user{
-// text-align: left;
-// padding: 0;
-// /* padding-left: 10px; */
-// background-color: #333;
-// color:white;
-// margin-top:0;
-// }
-
-// /* .individual-user:last-child{
-//   justify-content: center;
-//   align-items: center;
-// } */
-
-// .profile-picture {
-//   width: 400px;
-//   height:100%;
-// }
-
-// .user-detail {
-//   padding-left:10px;
-// }
-
-// /* p .user-detail {
-//   padding-bottom: 10px;
-// } */
-
-// .button-container{
-//   display: flex;
-//   justify-content: space-evenly;
-//   /* align-items: center; */
-
-// }
-// .like-dislike-button {
-//   padding: 2px 50px;
-//   margin-bottom: 7px;
-//   margin-top:5px;
-
-// }
-// .like-dislike-button:focus {
-//   outline:none
-// }
-
-// .like-dislike-button:hover {
-//   background-color: lightblue
-// }
-
-// /* .dislike:hover{
-//     background: rgb(247, 161, 161);
-//     transition: 0.5s;
-// } */
-// .previous-next-container {
-// display: flex;
-// align-content: center;
-// justify-content: center;
-// }
-
-// .next-previous-button {
-// background-color: darkblue;
-// color: white;
-// margin:5px;
-// padding:5px 10px;
-// width:100px;
-// /* flex-grow: 1; */
-
-// }
-
-  
+}
