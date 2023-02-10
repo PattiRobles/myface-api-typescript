@@ -224,6 +224,7 @@ ul {
 .user-posts-container {
   display: flex;
   margin-top: 5%;
+  overflow: hidden;
 }
 
 .user-single-post {

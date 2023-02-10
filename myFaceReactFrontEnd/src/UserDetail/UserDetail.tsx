@@ -25,7 +25,7 @@ export interface UserModel {
 
 export function UserDetail() {
     const [userData, setUserData] = useState<UserModel>();
-    const [postsCarouselIndex, setPostsCarouselIndex] = useState(1);
+    const [postsCarouselIndex, setPostsCarouselIndex] = useState(0);
 
     // const location = useLocation();
     // const userTagAndUserId = location.pathname
@@ -48,11 +48,12 @@ export function UserDetail() {
 
         setPostsCarouselIndex(postsCarouselIndex + 1);
         if (postsCarouselIndex > (postsCarousel?.children.length - 1)) {
-            setPostsCarouselIndex(1);
+            setPostsCarouselIndex(0);
         }
-        postsCarousel.style.transform = `translateX(-${postsCarouselIndex * 18}%)`;
-    };
-
+        postsCarousel.style.transform = `translateX(-${postsCarouselIndex + 1 * 18}%)`;
+     console.log("posts carousel index is equal to: " + postsCarouselIndex);
+        console.log("posts carousel children length: " + postsCarousel?.children.length);
+    }; 
     function userPostsPreviousButton() {
         console.log("carousel Previous button was clicked");
 
@@ -60,7 +61,9 @@ export function UserDetail() {
         if (postsCarouselIndex < 0) {
             setPostsCarouselIndex(postsCarousel?.children.length - 1);
         }
-        postsCarousel.style.transform = `translateX(-${postsCarouselIndex * 18}%)`;
+        postsCarousel.style.transform = `translateX(-${postsCarouselIndex -1 * 18}%)`;
+        console.log("posts carousel index is equal to: " + postsCarouselIndex);
+        console.log("posts carousel children length: " + postsCarousel?.children.length);
     };
 	
     return (
