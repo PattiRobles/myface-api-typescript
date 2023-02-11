@@ -1,6 +1,7 @@
 import React, { useEffect, FormEvent } from "react";
 import { useState } from "react";
 import '../App.scss'
+import './CreateUser.scss'
 import { createUser } from "../ApiClient";
 
 export function CreateUser() {
@@ -31,7 +32,7 @@ export function CreateUser() {
                     name="name" 
                     required
                     onChange={e => setUserNameAndSurname(e.target.value)}
-                    placeholder="required" ></input>
+                    placeholder="Required" ></input>
                 </label>
                 <label>
                     Username:<br></br>
@@ -40,7 +41,7 @@ export function CreateUser() {
                     name="username" 
                     required
                     onChange={e => setUserName(e.target.value)}
-                    placeholder="required " ></input>
+                    placeholder="Required " ></input>
                 </label>
                 <label>
                     Email: <br></br>
@@ -49,7 +50,7 @@ export function CreateUser() {
                     name="email" 
                     required
                     onChange={e => setUserEmail(e.target.value)}
-                    placeholder="required"></input>
+                    placeholder="Required"></input>
                 </label>
                 <label>
                     Cover Image URL: <br></br>
@@ -58,7 +59,7 @@ export function CreateUser() {
                     name="coverImageUrl" 
                     required
                     onChange={e => setUserCoverImage(e.target.value)}
-                    placeholder="required">
+                    placeholder="Required">
                     </input>
                 </label>
                 <label>
@@ -68,7 +69,7 @@ export function CreateUser() {
                     name="profileImageUrl" 
                     required
                     onChange={e => setUserProfileImage(e.target.value)} 
-                    placeholder="Required information"></input>
+                    placeholder="Required"></input>
                 </label>
                 
                 <button type="submit">Create New User</button>

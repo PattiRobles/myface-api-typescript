@@ -21,13 +21,13 @@ function App() {
 
         <Route path="/posts" element={
           <div>
-            <h1>Posts</h1>
+            <h1 className='list-title'>Posts</h1>
             <PostList />
           </div>} />
 
         <Route path="/users" element={
           <div>
-          <h1>Users</h1>
+          <h1 className='list-title'>Users</h1>
           <UserList />
           </div>} />
 

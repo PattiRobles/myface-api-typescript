@@ -62,14 +62,14 @@ export function PostList() {
             {pageData?.results && <ul className="all-posts-container">
                 {pageData.results.map((post) =>
                     <li className="single-post-container">
-                        <img src={post.imageUrl}></img>
+                        <img className='post-image' src={post.imageUrl}></img>
                         <div className="single-post-text-box">
-                            <h4>{post.postedBy.name}</h4>
-                            <Link to={`/users/${post.postedBy.id}`}>{post.postedBy.username}</Link>
-                            <p>{post.message}</p>
+                            <Link className="link-to-user"to={`/users/${post.postedBy.id}`}>{post.postedBy.name}</Link><br/>
+                             {post.postedBy.username}<br/>
+                             {post.message}
 
                             <div className='button-container'>
-                                <button className="like-dislike-button" type="submit">👍</button>                
+                                <button className="like-dislike-button" type="submit">❤️</button>                
                                 <button className="like-dislike-button" type="submit">👎</button>
                             </div>
                      
@@ -77,9 +77,9 @@ export function PostList() {
             </ul>}
 <br/>
 <div className='previous-next-container'>
-            {pageData?.previous &&  <Link to={pageData.previous}><button className='next-previous-button'>Previous</button></Link>}            
+            {pageData?.previous &&  <Link to={pageData.previous}><button className='previous-next-button'>Previous</button></Link>}            
             {<br/>}
-            {pageData?.next && <Link to={pageData.next}><button className='next-previous-button'>Next</button></Link>}
+            {pageData?.next && <Link to={pageData.next}><button className='previous-next-button'>Next</button></Link>}
             </div>
         </div>
     )
