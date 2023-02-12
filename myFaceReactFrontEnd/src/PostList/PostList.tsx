@@ -68,9 +68,10 @@ export function PostList() {
                         className="post-image" 
                         alt="photo uploaded by user" 
                         src={post.imageUrl}
-                        
-                        // onError={(e) => e.target.src='https://static.vecteezy.com/system/resources/previews/005/337/799/original/icon-image-not-found-free-vector.jpg'}
-                        />
+                        onError={({ currentTarget }) => {
+                            currentTarget.onerror = null; // prevents looping
+                            currentTarget.src = "https://cdn-multicoat-com.sfo2.digitaloceanspaces.com/wp-content/uploads/2018/08/02232112/placeholder.jpg";
+                        }} />
                         <div className="single-post-text-box">
                             <Link className="link-to-user"to={`/users/${post.postedBy.id}`}>{post.postedBy.name}</Link><br/>
                              <div className="postlist-username">{post.postedBy.username}</div>
