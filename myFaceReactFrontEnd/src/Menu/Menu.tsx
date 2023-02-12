@@ -10,7 +10,6 @@ export function Menu () {
 	const [menuOpen, setMenuOpen] = useState(false)
 
 
-
      return( 
 			<nav>
 				{!menuOpen && <TiThMenu 
@@ -30,8 +29,8 @@ export function Menu () {
 				<Link to="/" className="menu-item">Home</Link>
 				<Link to="/posts" className="menu-item">Posts</Link>
 				<Link to="/users" className="menu-item">Users</Link>
-				<Link to="/posts/create" className="menu-item">+ Posts</Link> 
-				<Link to="/users/create" className="menu-item">+ Users</Link>
+				<Link to="/posts/create" className="menu-item">+ New Post</Link> 
+				<Link to="/users/create" className="menu-item">+ New User</Link>
 			</div>}
 			</nav>
 			

@@ -1,24 +1,47 @@
 .menu-icon{
 	position:absolute;
-	top:5%;
-	right:5%;
+	top:3%;
+	right:3%;
 	cursor:pointer;
+	z-index: 10;
+	background-color: #151820;
 }
 
 .menu-container{
 	display:flex;
-	// flex-direction: column;
+	flex-direction: column;
 	align-items:center;
-	// position:absolute;
-	right:5%
+	position:absolute;
+	top:0;
+	right:0;
+	z-index:5;
+	height:100%;
+	width:25%;
 
 }
  
 .menu-item {
-	background-color: coral;
+	background-color: #151820;
 	width: 100%;
-	// display: flex;
 	color: white;
+	font-size: 20px;
 	padding-left: 2px;
-	flex-grow: 1;
+	flex-grow: 1
 }
+
+.menu-item:last-of-type {
+	flex-grow: 6;
+}
+
+.menu-item:first-of-type{
+	padding-top:30%
+}
+
+.menu-item:hover{
+	color:#2985ff;
+	transition: 0.2s;
+}
+
+// body :not(nav){
+// filter: blur(1px)
+// }
