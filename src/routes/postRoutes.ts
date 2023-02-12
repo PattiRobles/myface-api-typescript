@@ -15,7 +15,7 @@ router.get('/', async (request, response) => {
 });
 
 router.post('/create/',
-    body('message').notEmpty(),
+    body('message').notEmpty(), //adding a level of validation
     body('imageUrl').notEmpty(),
     async (request, response) => {
 

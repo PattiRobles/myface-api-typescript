@@ -3,34 +3,40 @@ import { useState } from "react";
 import '../App.scss'
 import './CreateUser.scss'
 import { createUser } from "../ApiClient";
+import { useNavigate } from "react-router-dom";
 
-export function CreateUser() {
+export function CreateUser() { //rename to 'CreateNewUser' to avoid confusion with APIClient fetch call??
+
     const [userNameAndSurname, setUserNameAndSurname] = useState("");
     const [userName, setUserName] = useState("");
     const [userEmail, setUserEmail] = useState("");
     const [userCoverImage, setUserCoverImage] = useState("");
     const [userProfileImage, setUserProfileImage] = useState("");
+    const [errorMessage, setErrorMessage] = useState<string>("");
 
-    async function HandleSubmit(event: FormEvent<HTMLFormElement>) {
+    const navigate = useNavigate();
+
+    async function HandleSubmitNewUser(event: FormEvent<HTMLFormElement>) {
         event.preventDefault()
+
         createUser(userNameAndSurname, userName, userEmail, userCoverImage, userProfileImage)
-            .then(
-            (response) => {
-                alert("New user successfully created!");
-                console.log(response)
-            }
-        );
+            .then(() => navigate('/users'))
+            .catch(error => setErrorMessage(error.message))
+
     }
+
 
     return (
         <div>
-            <form onSubmit={(e) => HandleSubmit(e)}>
+            <p className="errormessage">{(errorMessage)? errorMessage : ""} </p>
+            <form onSubmit={(event) => HandleSubmitNewUser(event)}>
                 <label>
                     Name: <br></br>
                     <input 
                     type="text" 
                     name="name" 
-                    required
+                    value={userNameAndSurname}
+                    // required
                     onChange={e => setUserNameAndSurname(e.target.value)}
                     placeholder="Required" ></input>
                 </label>
@@ -39,6 +45,7 @@ export function CreateUser() {
                     <input 
                     type="text" 
                     name="username" 
+                    value={userName}
                     required
                     onChange={e => setUserName(e.target.value)}
                     placeholder="Required " ></input>
@@ -48,6 +55,7 @@ export function CreateUser() {
                     <input 
                     type="text" 
                     name="email" 
+                    value={userEmail}
                     required
                     onChange={e => setUserEmail(e.target.value)}
                     placeholder="Required"></input>
@@ -57,6 +65,7 @@ export function CreateUser() {
                     <input 
                     type="text"  
                     name="coverImageUrl" 
+                    value={userCoverImage}
                     required
                     onChange={e => setUserCoverImage(e.target.value)}
                     placeholder="Required">
@@ -67,6 +76,7 @@ export function CreateUser() {
                     <input 
                     type="text" 
                     name="profileImageUrl" 
+                    value={userProfileImage}
                     required
                     onChange={e => setUserProfileImage(e.target.value)} 
                     placeholder="Required"></input>
@@ -78,28 +88,3 @@ export function CreateUser() {
     )
 }
 
-// router.post('/create/',
-//     body('name').notEmpty(),
-//     body('username').notEmpty().isLowercase().not().contains(" "),
-//     body('email').notEmpty().isEmail(),
-//     body('coverImageUrl').notEmpty(),
-//     body('profileImageUrl').notEmpty(),
-//     async (request, response) => {
-
-//     const errors = validationResult(request);
-//     if (!errors.isEmpty()) {
-//         return response.status(400).json({errors: errors.array()});
-//     }
-//     const user = request.body;
-
-//     await createUser(user as CreateUserRequest);
-//     return response.sendStatus(200)
-// });
-
-// export interface CreateUserRequest {
-//     name: string;
-//     username: string;
-//     email: string;
-//     coverImageUrl: string;
-//     profileImageUrl: string;
-// }
