@@ -10,23 +10,28 @@
 	align-items: center;
 	}
 	
-	.individual-user {
+.individual-user {
 	  text-align: left;
 	  padding: 0;
-	  background-color: black;
+	  background-color: #151820;
 	  color:white;
 	  margin-top:0;
+	  margin-bottom: 15px;
 	}
 	
-	.profile-picture {
+.profile-picture {
 	  width: 400px;
 	  height:100%;
 	}
   
-	.user-detail {
+.user-detail {
 	  padding-left:10px;
+	  margin: 0;
+	  background-color: #151820;
 	}
 	
-	p .user-detail {
+p .user-detail {
 	  padding-bottom: 10px;
 	}
+
+	

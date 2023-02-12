@@ -56,16 +56,24 @@ export function PostList() {
         // event.preventDefault(); Think this is not needed for a button click
         likePost(postId, likeDislike)
     }
-   
+
+      
      return (
         <div>
             {pageData?.results && <ul className="all-posts-container">
                 {pageData.results.map((post) =>
                     <li className="single-post-container">
-                        <img className='post-image' src={post.imageUrl}></img>
+                         {/* <img className='post-image' src={post.imageUrl}></img>  onerror="src =*/}
+                        <img 
+                        className="post-image" 
+                        alt="photo uploaded by user" 
+                        src={post.imageUrl}
+                        
+                        // onError={(e) => e.target.src='https://static.vecteezy.com/system/resources/previews/005/337/799/original/icon-image-not-found-free-vector.jpg'}
+                        />
                         <div className="single-post-text-box">
                             <Link className="link-to-user"to={`/users/${post.postedBy.id}`}>{post.postedBy.name}</Link><br/>
-                             {post.postedBy.username}<br/>
+                             <div className="postlist-username">{post.postedBy.username}</div>
                              {post.message}
 
                             <div className='button-container'>

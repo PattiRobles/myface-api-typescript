@@ -40,7 +40,7 @@ export function CreatePost() {
                     required 
                     name="imageUrl"
                     onChange={e => setPostImageUrl(e.target.value)}
-                    placeholder="required"></input>
+                    placeholder="Required"></input>
                 </label>
                 <button type="submit">Submit</button>
             </form>

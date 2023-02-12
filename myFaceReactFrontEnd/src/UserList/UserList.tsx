@@ -48,15 +48,15 @@ export function UserList() {
             {userList.results.map((user)=>
 			<li className="individual-user">
             	<img className="profile-picture" src={user.profileImageUrl}></img>
-                <h3 className="user-detail"><Link to={`/users/${user.id}`}>{user.name}</Link></h3>
+                <h3 className="user-detail"><Link className="link-to-user" to={`/users/${user.id}`}>{user.name}</Link></h3>
 				<p className="user-detail">{user.username}</p> 
 			</li>	
 			)}
                     </ul>}
         <div className='previous-next-container'>
-            {userList?.previous && <Link to={userList.previous}><button className='next-previous-button'>Previous</button></Link>}
+            {userList?.previous && <Link to={userList.previous}><button className='previous-next-button'>Previous</button></Link>}
             {<br/>}
-            {userList?.next && <Link to={userList.next}><button className='next-previous-button'>Next</button></Link>}
+            {userList?.next && <Link to={userList.next}><button className='previous-next-button'>Next</button></Link>}
             </div>
         </div>
     

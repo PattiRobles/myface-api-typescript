@@ -4,6 +4,7 @@
   background-color: #252a38;
   font-family: 'Segoe UI';
   box-sizing: border-box;
+  z-index: 0
 
 }
 
@@ -16,14 +17,11 @@
   color:#dcdcdc
 }
 
-// a {
-//   margin-left: 4px;
-// }
-
 .list-title{
   padding-bottom: 25px;
   text-align: left;
   padding-left:35px ;
+  padding-top: 20px;
   
 }
 
@@ -37,9 +35,9 @@ img {
   border: 0;
 }
 
-input {
-  border: 1px solid black;
-}
+// input {
+//   border: 1px solid black;
+// }
 
 
 p {
@@ -54,68 +52,7 @@ ul {
 li{
   width:30vh;
   list-style-type: none;
-  background-color: #151820;
-}
-
-.header-menu-lines {
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  background-color: white;
-  height: 6%;
-  width: 70%;
-}
-
-#header-open-button {
-  position: fixed;
-  right: 1%;
-  top: 1.5%;
-  width: 5.5%;
-  height: 4%;
-  min-width: 30px;
-  max-width: 40px;
-  background-color: grey;
-  border: 1px solid white;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  align-items: center;
-  border-radius: 8px;
-}
-
-.navbar-container {
-  position: fixed;
-  top: 6%;
-  right: 1%;
-  width: 10%;
-  background-color: grey;;
-  border: 2px solid grey;
-  display: none;
-  margin-right: 20px;
-  
-
-  .navbar {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: left;
-
-  }
-
-  .navbar-item {
-    width: 100%;
-    display: flex;
-    border: 2px white solid;
-    color: white;
-    padding-left: 2px;
-    flex-grow: 1;
-
-  }
-}
-
-#navbar-displayed {
-  display: flex;
-  position: fixed;
-  top: 6%;
+  // background-color: #151820;
 }
 
 //DUPLICATE??
@@ -126,6 +63,47 @@ li{
 // }
 
 //USER DETAILS PAGE
+.userdetail-title-posts{
+padding-top: 25px;
+padding-bottom: 20px;
+text-align: left;
+font-size: 25px;
+}
+
+.userdetail-posts-container{
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 1%;
+  overflow: auto;
+  
+
+}
+.userdetail-single-post{
+display: flex;
+flex-direction: column;
+width:250px;
+
+}
+
+// img .userdetail-single-post {
+//   max-width: 100%;
+//   max-height: auto;
+//   background-color: #2985ff;
+// }
+
+div.userdetail-single-post {
+  background-color: #2985ff;
+}
+
+.userdetail-post-message {
+  background-color: #151820;
+  font-size: 15px;
+}
+
+.userdetail-post-image{
+  min-width: 200px
+}
+
 .user-detail-cover {
   position: relative;
   height: 100%;
@@ -142,12 +120,12 @@ li{
 
 .user-cover-transparency {
   position: absolute;
-  height: 18%;
+  height: 20%;
   min-height: 18%;
   width: 100%;
-  background-color: white;
-  opacity: .56;
-  bottom: 18%;
+  background-color: #252a38;
+  opacity: 0.56;
+  bottom:0
 }
 
 .user-detail-top-container {
@@ -161,16 +139,18 @@ li{
   left: 15%;
   background-color: transparent;
   margin: 0;
-  bottom: 20%;
+  bottom: 5%;
   left: 20%;
-  font-size: 1.2rem;
+  font-size: 1.6rem;
+  font-weight: 600;
 
 }
 
-.user-name-username {
+.user-name-details {
   position: absolute;
-  bottom: 10%;
-  left: 20%
+  bottom: -10%;
+  left: 20%;
+  text-align: left;
 }
 
 .user-name-email {
@@ -187,6 +167,12 @@ li{
   border-radius: 50%;
   max-height: 35%;
   border: 2px solid white;
+}
+.username{
+  font-weight: 600
+}
+.email{
+  font-weight: 200;
 }
 
 //lIKE AND DISLIKE BUTTONS
@@ -210,6 +196,12 @@ li{
 
 //POSTS LIST
 
+.postlist-username{
+  font-size: 12px;
+  font-weight: 300;
+  background-color: #151820;
+}
+
 .all-posts-container {
   display: flex;
   flex-wrap: wrap;
@@ -224,6 +216,7 @@ li{
   margin: 5px;
   background-color: #151820;
   width: 29%;
+  // position:relative
 }
 
 .single-post-text-box {
@@ -234,13 +227,16 @@ li{
   width: 25hv;
   text-align: left;
   padding-bottom: 4px;
-  padding-left: 5px
+  padding-left: 5px;
+  // position: absolute;
+  // bottom: 0;
 }
 
 .post-image{
-  width: 100%;
-  height:auto;
+  min-width: 100%;
+  min-height:auto;
   background-color: #151820;
+  background-image: url('http://placehold.it/350x350');
 }
 
 .link-to-user{

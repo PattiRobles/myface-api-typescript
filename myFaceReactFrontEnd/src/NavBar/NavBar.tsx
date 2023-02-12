@@ -1,16 +1,17 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import '../App.scss'
+import './NavBar.scss'
 import { Link } from "react-router-dom";
 
-const ourHeader = document.getElementsByClassName("navbar-container");
+const ourHeader = document.getElementById("navbar-container");
+console.log(ourHeader)
 
 export function NavBar() {
 	function toggleHeaderMenu() {
-		ourHeader[0].id === "navbar-displayed" ?
-			ourHeader[0].setAttribute("id", "") :
-			ourHeader[0].setAttribute("id", "navbar-displayed");
-
+		ourHeader.id === "navbar-displayed" ?
+			ourHeader.setAttribute("id", "") :
+			ourHeader.setAttribute("id", "navbar-displayed");
 	}
 
 	//google suggests putting this into a useEffect so the window.eventListener statement doesn't load for every single page; 
@@ -48,17 +49,14 @@ export function NavBar() {
 				<div className="header-menu-lines"></div>
 			</div>
 
-			<div className="navbar-container">
-				<nav className="navbar">
+			<div id="navbar-container">
+				<div className="navbar">
 				<li><Link to="/posts" className="navbar-item">Posts</Link></li>
 				<li><Link to="/users" className="navbar-item">Users</Link></li>
 				<li><Link to="/posts/create" className="navbar-item">Create Posts</Link> </li>
 				<li><Link to="/users/create" className="navbar-item">Create Users</Link></li>
-					{/* <a href="/posts" className="navbar-item">Posts</a>
-					<a href="/users" className="navbar-item">Users</a>
-					<a href="/users/create" className="navbar-item">New User</a>
-					<a href="/posts/create" className="navbar-item">New Post</a> */}
-				</nav>
+				
+				</div>
 			</div>
 		</div>
 	)

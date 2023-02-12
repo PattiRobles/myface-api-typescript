@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import reactLogo from './assets/react.svg'
 import './App.scss'
+import './NavBar/NavBar.scss'
 import { PostList } from './PostList/PostList'
 import { BrowserRouter as Router, Routes, Route, Link, useParams} from 'react-router-dom'
 import { UserList } from './UserList/UserList'
@@ -8,13 +9,15 @@ import { NavBar } from './NavBar/NavBar'
 import { CreatePost } from './CreatePost/CreatePost'
 import { CreateUser } from './CreateUser/CreateUser'
 import { UserDetail } from './UserDetail/UserDetail'
+import Menu from './Menu/Menu'
 
 function App() {
 
   return (
     <Router>
       <div>
-      <NavBar />
+      {/* <NavBar /> */}
+      <Menu />
       </div>
       
       <Routes>
@@ -54,8 +57,8 @@ function App() {
             
            } />
 
-        {/* <Route path="*" element={
-          <PostList />} /> */}
+        <Route path="*" element={
+          <PostList />} />
 
       </Routes>
     </Router>
