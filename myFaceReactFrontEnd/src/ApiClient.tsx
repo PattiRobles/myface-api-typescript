@@ -16,7 +16,7 @@ export function createPost(message: string, imageUrl: string): Promise<Response>
 
     const fetchResponse = fetch(url, requestBody)
 
-        .then(response => response.json())
+        // .then(response => response.json())
         .then(response => {
             if (response.status !== 200) {
                 // console.log(responseJSON.error)
@@ -50,11 +50,12 @@ export function createUser( userNameAndSurname: string, userName: string, userEm
 
     const fetchResponse = fetch(url, requestBody)
 
-        .then(response => response.json())
+        // .then(response => response.json()) - this was blocking correct submissions
         .then((response) => {
             if(response.status !== 200) {
-                console.log(response.status)
-                throw new Error (`Something went wrong, ${response.errors[0].param} is an invalid value.`)
+                console.log(response)
+                throw new Error (`Incorrect data entered in form`)
+                //throw new Error (`Something went wrong, ${response.errors[0].param} is an invalid value.`) - this is reading undefined
                 
             }
             alert('New user successfully created')
@@ -64,8 +65,11 @@ export function createUser( userNameAndSurname: string, userName: string, userEm
 }
 
 export function likePost(postId: number, likeDislike: string) {
+
     console.log(postId);
+
     const url = `http://localhost:3001/posts/${postId}/${likeDislike}/`;
+
     const fetchResponse = fetch(url, {
         method: "POST"
     })
