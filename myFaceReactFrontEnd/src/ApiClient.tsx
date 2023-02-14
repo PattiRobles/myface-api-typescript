@@ -50,17 +50,25 @@ export function createUser( userNameAndSurname: string, userName: string, userEm
 
     const fetchResponse = fetch(url, requestBody)
 
-        // .then(response => response.json()) - this was blocking correct submissions
+//transforming response to JSON is problematic. Line 56: if left in, correct submissions do not go through 
+//error : "unexpected token 'O', 'OK'  is not valid JSON". However, if there is an error with an input field things actually work and
+//the correct errors are shown. If I remove line 56, then correct submissions work but input errors are undefined
+        .then(response => response.json()) //this seems to block correct submissions
         .then((response) => {
-            if(response.status !== 200) {
-                console.log(response)
-                throw new Error (`Incorrect data entered in form`)
+            console.log(response)
+            if(response.status === 200) {
+             alert('New user successfully created')
+              return response
+            } else {
+                throw new Error(`Something went wrong... ${response.errors.map((error:any) => error.param)} field is invalid`)
+            }   
+                // throw new Error (`Incorrect data entered in form`)
                 //throw new Error (`Something went wrong, ${response.errors[0].param} is an invalid value.`) - this is reading undefined
                 
-            }
-            alert('New user successfully created')
-            return response;
-        }) 
+            })
+            
+            // return response;
+
         return fetchResponse; 
 }
 

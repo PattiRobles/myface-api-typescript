@@ -45,28 +45,6 @@ export function UserDetail() {
 		.then(userData => setUserData(userData))
 	}, []);
 
-    // function userPostsNextButton() {
-    //     console.log("carousel next button was clicked");
-
-    //     setPostsCarouselIndex(postsCarouselIndex + 1);
-    //     if (postsCarouselIndex > (postsCarousel?.children.length - 1)) {
-    //         setPostsCarouselIndex(0);
-    //     }
-    //     postsCarousel.style.transform = `translateX(-${postsCarouselIndex + 1 * 18}%)`;
-    //  console.log("posts carousel index is equal to: " + postsCarouselIndex);
-    //     console.log("posts carousel children length: " + postsCarousel?.children.length);
-    // }; 
-    // function userPostsPreviousButton() {
-    //     console.log("carousel Previous button was clicked");
-
-    //     setPostsCarouselIndex(postsCarouselIndex - 1);
-    //     if (postsCarouselIndex < 0) {
-    //         setPostsCarouselIndex(postsCarousel?.children.length - 1);
-    //     }
-    //     postsCarousel.style.transform = `translateX(-${postsCarouselIndex -1 * 18}%)`;
-    //     console.log("posts carousel index is equal to: " + postsCarouselIndex);
-    //     console.log("posts carousel children length: " + postsCarousel?.children.length);
-    
 	
     return (
 		<div className="user-detail-top-container">
@@ -88,7 +66,9 @@ export function UserDetail() {
             <div className="userdetail-posts-container" >
                     {userData.posts.map((userPost) =>
                         <div className="userdetail-single-post">
-                            <img src={userPost.imageUrl} className="userdetail-post-image"></img>
+                            <img 
+                            src={userPost.imageUrl} 
+                            className="userdetail-post-image"></img>
                             <div className="userdetail-post-message">{userPost.message}</div>
                         </div>
                         

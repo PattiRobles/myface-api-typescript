@@ -8,8 +8,11 @@
 
 }
 
+
+
 #root {
   max-width: 1280px;
+  // min-height:100vh; pushes components to top of page
   margin: 0 auto;
   text-align: center;
   border-style: border-box;
@@ -63,36 +66,65 @@ li{
 // }
 
 //USER DETAILS PAGE
+
+// /* width */
+// ::-webkit-scrollbar {
+//   width: 5px;
+// }
+
+// /* Track */
+// ::-webkit-scrollbar-track {
+//   box-shadow: inset 0 0 5px rgb(52, 52, 52); 
+//   border-radius: 10px;
+// }
+ 
+// /* Handle */
+// ::-webkit-scrollbar-thumb {
+//   background: darkslategrey; 
+//   border-radius: 10px;
+// }
+
+
 .userdetail-title-posts{
-padding-top: 25px;
-padding-bottom: 20px;
+padding-top: 5%;
+padding-bottom: 2%;
 text-align: left;
 font-size: 25px;
+}
+
+.userdetail-title-posts:first-of-type{
+  padding-top:10%;
 }
 
 .userdetail-posts-container{
   display: flex;
   flex-wrap: nowrap;
   gap: 1%;
-  overflow: auto;
-  
-
+  //overflow: auto;
+  overflow-x: scroll;
+  // scrollbar-width: none;
 }
+
+//unable to scroll with mouse, OK with arrows
+.userdetail-posts-container::-webkit-scrollbar{
+  width:0;
+}
+
+body::-webkit-scrollbar{
+display:none;
+}
+
 .userdetail-single-post{
 display: flex;
 flex-direction: column;
 width:250px;
+scrollbar-width: none;
 
 }
 
-// img .userdetail-single-post {
-//   max-width: 100%;
-//   max-height: auto;
-//   background-color: #2985ff;
-// }
 
 div.userdetail-single-post {
-  background-color: #2985ff;
+  background-color: #151820;
 }
 
 .userdetail-post-message {
@@ -141,14 +173,14 @@ div.userdetail-single-post {
   margin: 0;
   bottom: 5%;
   left: 20%;
-  font-size: 1.6rem;
+  font-size: 1.7rem;
   font-weight: 600;
 
 }
 
 .user-name-details {
   position: absolute;
-  bottom: -10%;
+  bottom: -15%;
   left: 20%;
   text-align: left;
 }
@@ -161,11 +193,11 @@ div.userdetail-single-post {
 
 .user-profile-image {
   position: absolute;
-  bottom: 0%;
-  left: 2%;
+  bottom: -15%;
+  left: 4%;
   margin: 0;
   border-radius: 50%;
-  max-height: 35%;
+  max-height: 40%;
   border: 2px solid white;
 }
 .username{
@@ -236,7 +268,7 @@ div.userdetail-single-post {
   min-width: 100%;
   min-height:auto;
   background-color: #151820;
-  background-image: url('http://placehold.it/350x350');
+  
 }
 
 .link-to-user{
